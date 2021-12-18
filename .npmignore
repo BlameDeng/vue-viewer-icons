@@ -3,7 +3,9 @@ node_modules
 public
 src
 dist
+docs
 
+.git
 .browserslistrc
 .gitignore
 .eslintrc.js
