@@ -1,0 +1,13 @@
+.hello {
+  padding: 20px;
+}
+
+.hello > div {
+  display: inline-block;
+  margin: 16px;
+}
+
+.hello > div > svg {
+  width: 24px;
+  height: 24px;
+}

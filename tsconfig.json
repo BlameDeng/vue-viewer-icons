@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "declaration": true,
+    "esModuleInterop": true,
+    "sourceMap": false,
+    "allowJs": false,
+    "strict": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "traceResolution": false,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "importHelpers": false,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["lib/**/*","es/**/*"]
+}
