@@ -1,8 +1,13 @@
 {
   "name": "vue-viewer-icons",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "author": "Blame",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BlameDeng/vue-viewer-icons"
+  },
+  "homepage": "https://blamedeng.github.io/vue-viewer-icons",
   "keywords": [
     "svg",
     "icons"
@@ -14,8 +19,11 @@
     "clean": "rimraf src/components/icons/* && rimraf lib && rimraf es",
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:icons": "rimraf src/components/icons/* && node generate.js",
-    "build:lib": "rimraf lib && rimraf es && npm run build:icons && tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json",
+    "build:icons": "node generate.js",
+    "build:types": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json",
+    "build:cjs": "npx babel src/components --config-file ./babel.cjs.json --out-dir lib --extensions \".tsx,.ts\"",
+    "build:esm": "npx babel src/components --config-file ./babel.esm.json --out-dir es --extensions \".tsx,.ts\"",
+    "build:lib": "npm run clean && npm run build:icons && npm  run build:types && npm run build:cjs && npm run build:esm",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -32,6 +40,9 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/preset-typescript": "^7.16.5",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
     "rimraf": "^3.0.2",

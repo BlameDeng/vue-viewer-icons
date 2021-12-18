@@ -1,7 +1,21 @@
 {
-  "extends": "./tsconfig.build.json",
   "compilerOptions": {
-    "outDir": "es",
-    "module": "esnext"
-  }
+    "target": "es5",
+    "module": "esnext",
+    "declaration": true,
+    "declarationDir": "es",
+    "emitDeclarationOnly": true,
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "lib": ["esnext", "dom"]
+  },
+  "include": ["src/components/**/*.ts", "src/components/**/*.tsx"],
+  "exclude": ["node_modules"]
 }
